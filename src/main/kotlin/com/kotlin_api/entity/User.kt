@@ -1,6 +1,10 @@
 package com.kotlin_api.entity
 
-import javax.persistence.*
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.JoinColumn
+import javax.persistence.OneToOne
+import javax.persistence.Table
 
 @Entity
 @Table(name = "user")

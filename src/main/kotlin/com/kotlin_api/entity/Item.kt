@@ -17,7 +17,7 @@ data class Item (
     @Column(name = "image_url")
     val imageUrl: String,
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "creater_id")
     val createrId: String,
 
