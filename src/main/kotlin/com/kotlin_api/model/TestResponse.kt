@@ -1,6 +1,6 @@
 package com.kotlin_api.model
 
-import com.kotlin_api.entity.Item
+import com.kotlin_api.entity.User
 
 data class TestResponse (
     var result: Int,
@@ -9,6 +9,5 @@ data class TestResponse (
 )
 
 data class UserList(
-    var itemList: Array<Item>
-    //var collectionList: Array<Object>
+    var list: List<User>
 )

@@ -1,16 +1,17 @@
 package com.kotlin_api.service
 
-import com.kotlin_api.entity.Item
-import com.kotlin_api.repository.TestItemRepository
+import com.kotlin_api.entity.User
+import com.kotlin_api.repository.TestUserRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
+import java.util.*
 
 @Service
 @Transactional
 class TestService (
-        val testItemRepository: TestItemRepository
+        val testUserRepository: TestUserRepository
         ){
 
         @Transactional(readOnly = true)
-        fun getItemList(userId: String): Array<Item> = testItemRepository.getItemList(userId)
+        fun getByUserId(userId: String): List<User> = testUserRepository.getByUserId(userId)
 }

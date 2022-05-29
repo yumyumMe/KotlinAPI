@@ -1,10 +1,6 @@
 package com.kotlin_api.entity
 
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.JoinColumn
-import javax.persistence.OneToOne
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "user")
@@ -12,10 +8,9 @@ data class User (
 
     @Id
     @Column(name = "id")
-    val Id: Int,
+    val id: Int,
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
+    @Column(name = "user_id")
     val userId: String,
 
     @Column(name = "user_name")

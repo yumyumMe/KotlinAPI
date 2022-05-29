@@ -7,8 +7,7 @@ import javax.persistence.*
 data class Creater (
 
     @Id
-    @OneToMany
-    @JoinColumn(name = "creater_id")
+    @Column(name = "creater_id")
     val Id: String,
 
     @Column(name = "creater_name")

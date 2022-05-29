@@ -9,23 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
-@RequestMapping("/api/user/items/")
+@RequestMapping("/api")
 class TestController (
     val testService: TestService
     ){
 
-    @GetMapping("/list")
+    @GetMapping("/user")
     fun getUserItemList(
-        @RequestParam(value = "userId", required = true) userId: String,
-        @RequestParam(value = "limit", required = true) limit: Int,
-        @RequestParam(value = "page", required = true) page: Int
-    ): TestResponse{
+        @RequestParam(value = "userId", required = true) userId: String
+    ): TestResponse {
 
-        // itemテーブルから取得したレコードを詰める
-        var userItemList = TestResponse(0, UserList(testService.getItemList(userId)), "success")
+        // userテーブルから取得したレコードを詰める
+        var userItemList = TestResponse(0, UserList(testService.getByUserId(userId)), "success")
         return userItemList
-
-        // collectionテーブルから取得したレコードを詰める
 
     }
 
