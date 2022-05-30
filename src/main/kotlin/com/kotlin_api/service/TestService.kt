@@ -4,7 +4,6 @@ import com.kotlin_api.entity.User
 import com.kotlin_api.repository.TestUserRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.util.*
 
 @Service
 @Transactional
@@ -13,5 +12,6 @@ class TestService (
         ){
 
         @Transactional(readOnly = true)
-        fun getByUserId(userId: String): List<User> = testUserRepository.getByUserId(userId)
+        fun getByUserId(uid: String): List<User> = testUserRepository.getByUserId(uid)
+
 }
