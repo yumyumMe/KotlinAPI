@@ -1,5 +1,6 @@
 package com.kotlin_api.entity
 
+import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
@@ -20,6 +21,18 @@ data class User (
     val telNum: String,
 
     @Column(name = "status")
-    val status: Int
+    val status: Int,
+
+    @Column(name = "create_datetime")
+    val createDatetime: LocalDateTime,
+
+    @Column(name = "update_datetime")
+    val updateDatetime: LocalDateTime,
+
+    @Column(name = "deleted")
+    val deleted: Int,
+
+    @Column(name = "version")
+    val version: Int
 
     )

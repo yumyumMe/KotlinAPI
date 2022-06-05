@@ -10,8 +10,16 @@ data class TestResponse (
 
     )
 
-data class userListData (
+data class userListData(
 
-    var userList: List<User>
+    var userList: List<users>
+
+    )
+
+data class users (
+
+    var userId: String,
+    var userName: String,
+    var status: Int
 
     )
