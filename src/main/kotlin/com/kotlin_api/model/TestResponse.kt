@@ -12,7 +12,7 @@ data class TestResponse (
 
 data class userListData(
 
-    var userList: List<users>
+    var userList: users
 
     )
 

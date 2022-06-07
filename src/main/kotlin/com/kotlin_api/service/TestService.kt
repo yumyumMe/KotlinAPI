@@ -1,6 +1,5 @@
 package com.kotlin_api.service
 
-import com.kotlin_api.entity.User
 import com.kotlin_api.model.users
 import com.kotlin_api.repository.TestUserRepository
 import org.springframework.stereotype.Service
@@ -17,7 +16,6 @@ class TestService (
 
             testUserRepository.getByUserId(uid).map {
                 it ->
-
                 users(
                     it.userId,
                     it.userName,

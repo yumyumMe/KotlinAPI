@@ -25,7 +25,7 @@ class TestController (
 
         // userテーブルから取得したレコードを詰める
         // ここListの中に取得したユーザーごとのuserId, userName, statusを入れて返したい
-        var userItemList = TestResponse(0, userListData(List<testService.getByUserId(uid)>), "success")
+        var userItemList = TestResponse(0, userListData(testService.getByUserId(uid)), "success")
         return userItemList
 
     }
