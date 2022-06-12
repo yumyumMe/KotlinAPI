@@ -1,9 +1,10 @@
 package com.kotlin_api.service
 
-import com.kotlin_api.model.users
+import com.kotlin_api.model.userDetail
 import com.kotlin_api.repository.TestUserRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
+import java.util.*
 
 @Service
 @Transactional
@@ -12,18 +13,16 @@ class TestService (
         ){
 
         @Transactional(readOnly = true)
-        fun getByUserId(uid: String): users {
+        fun getByUserId(uid: String): Optional<userDetail> {
 
-            testUserRepository.getByUserId(uid).map {
+            return testUserRepository.getByUserId(uid).map {
                 it ->
-                users(
+                userDetail(
                     it.userId,
                     it.userName,
                     it.status
                 )
             }
-
-            return users // ここ書き方分からない
 
         }
 

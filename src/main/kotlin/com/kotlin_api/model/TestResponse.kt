@@ -1,22 +1,22 @@
 package com.kotlin_api.model
 
-import com.kotlin_api.entity.User
+import java.util.*
 
 data class TestResponse (
 
     var result: Int,
-    var data: userListData,
+    var data: userData,
     var message: String
 
     )
 
-data class userListData(
+data class userData(
 
-    var userList: users
+    var userInfo: Optional<userDetail>
 
     )
 
-data class users (
+data class userDetail (
 
     var userId: String,
     var userName: String,
