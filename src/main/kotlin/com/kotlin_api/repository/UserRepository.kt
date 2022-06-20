@@ -4,7 +4,7 @@ import com.kotlin_api.entity.User
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 
-interface TestUserRepository: JpaRepository<User, String> {
+interface UserRepository: JpaRepository<User, String> {
     
     fun getByUserId(uid: String): Optional<User>
 

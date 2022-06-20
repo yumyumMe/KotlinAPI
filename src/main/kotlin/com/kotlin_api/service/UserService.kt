@@ -1,21 +1,21 @@
 package com.kotlin_api.service
 
 import com.kotlin_api.model.userDetail
-import com.kotlin_api.repository.TestUserRepository
+import com.kotlin_api.repository.UserRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import java.util.*
 
 @Service
 @Transactional
-class TestService (
-        val testUserRepository: TestUserRepository
-        ){
+class UserService (
+    val UserRepository: UserRepository
+    ){
 
         @Transactional(readOnly = true)
         fun getByUserId(uid: String): Optional<userDetail> {
 
-            return testUserRepository.getByUserId(uid).map {
+            return UserRepository.getByUserId(uid).map {
                 it ->
                 userDetail(
                     it.userId,
@@ -25,5 +25,4 @@ class TestService (
             }
 
         }
-
-}
+    }

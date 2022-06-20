@@ -2,7 +2,7 @@ package com.kotlin_api.model
 
 import java.util.*
 
-data class TestResponse (
+data class UserInfoResponse (
 
     var result: Int,
     var data: userData,

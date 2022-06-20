@@ -1,5 +1,6 @@
 package com.kotlin_api.entity
 
+import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
@@ -10,13 +11,28 @@ data class Account (
     @Column(name = "id")
     val Id: Int,
 
+    @Column(name = "account_id")
+    val accountId: String,
+
     @Column(name = "account_type")
     val accountType: String,
 
     @Column(name = "user_id")
-    val userId: String,
+    val userId: String?,
 
-    @Column(name = "creater_id")
-    val createrId: String
+    @Column(name = "creator_id")
+    val creatorId: String?,
+
+    @Column(name = "create_datetime")
+    val createDatetime: LocalDateTime,
+
+    @Column(name = "update_datetime")
+    val updateDatetime: LocalDateTime,
+
+    @Column(name = "deleted")
+    val deleted: Int,
+
+    @Column(name = "version")
+    val version: Int
 
     )
