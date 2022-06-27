@@ -1,10 +1,7 @@
 package com.kotlin_api.entity
 
 import java.time.LocalDateTime
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "item_holder")
@@ -17,11 +14,13 @@ data class ItemHolder (
     @Column(name = "holder_id")
     val holderId: String,
 
-    @Column(name = "item_id")
-    val itemId: String,
+    @ManyToOne
+    @JoinColumn(name = "item_id")
+    val item: Item,
 
-    @Column(name = "account_id")
-    val accountId: String,
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    val account: Account,
 
     @Column(name = "status")
     val status: String,

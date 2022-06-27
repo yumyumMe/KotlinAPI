@@ -17,8 +17,9 @@ data class Account (
     @Column(name = "account_type")
     val accountType: String,
 
-    @Column(name = "user_id")
-    val userId: String?,
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    val user: User,
 
     @Column(name = "creator_id")
     val creatorId: String?,

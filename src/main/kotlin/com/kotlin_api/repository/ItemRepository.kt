@@ -13,9 +13,9 @@ interface ItemRepository: JpaRepository<Item, String> {
     @Query(
             "select i, k from Item i join Kind k on i.itemId = k.itemId" +
                     " where exists (" +
-                    " select 1 from ItemHolder h where h.itemId = i.itemId and exists (" +
-                    " select 1 from Account a where a.accountId = h.accountId and exists (" +
-                    " select 1 from User u where u.userId = a.userId and u.userId = :uid)))"
+                    " select 1 from ItemHolder h where h.item.itemId = i.itemId and exists (" +
+                    " select 1 from Account a where a.accountId = h.account.accountId and exists (" +
+                    " select 1 from User u where u.userId = a.user.userId and u.userId = :uid)))"
             )
     fun findItemInfoUIDAndStatus(@Param("uid") uid: String, pageable: Pageable): Page<Tuple>
 

@@ -23,8 +23,9 @@ data class Item (
     @Column(name = "status")
     val status: String,
 
-    @Column(name = "kind_id")
-    val kindId: String,
+    @ManyToOne
+    @JoinColumn(name = "kind_id")
+    val kind: Kind,
 
     @Column(name = "creator_id")
     val creatorId: String,
